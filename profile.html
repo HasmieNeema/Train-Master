@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login page</title>
+    <link rel="stylesheet" href="css/themes/theme1.css" />
+    <link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" /> 
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/themes/custom.css" />
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+
+    <style>
+            #user-img {
+                height: 120px;
+                display: block;
+                margin: 25px auto;
+            }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Event Details -->
+    <div data-role="page" id="events" data-theme="b">
+
+        <div data-role="header" data-position="fixed">
+            <h1>Train master</h1>
+            <a href="#panel1" data-icon="bars" data-iconpos="notext"> Menu </a>
+            <a href="" data-icon="back" data-iconpos="notext"> Back </a>
+            <!--
+            <div data-role="navbar">
+                <ul>
+                    <li> <a href="login.html" data-transition="slide"> Sign out</a> </li>
+                    <li> <a href="favourites.html" data-transition="slide"> Favourites </a> </li>
+                </ul>
+            </div>-->
+        </div>
+
+        <div data-role="main" class="ui-content" align="center">
+            <h1>Admin Profile</h1>
+           
+
+            <ul data-role="listview" data-inset="true">
+
+                    <div class="row user-profile">
+                            <img id="user-img" src="assets/icons/student1.gif" alt="user-img">
+                            <h2>Tharindu Wanninayake</h2>
+                            <h3>Student</h3>
+
+                        </div>
+                <li >
+                    <a href="" class="user-details" >
+                        
+                        <h3><B> Name</B></h3>
+                        <p>Tharindu Wanninayake</p>
+                        <h3><B> E-mail</B></h3>
+                        <p>Tharindu.2015294@iit.ac.lk</p>
+                        <h3><B> Qualifications</B></h3>
+                        <p>GCE A/L S-3</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="top-social-icons">
+                <a href="#" class="fa fa-linkedin"></a>
+                <a href="#" class="fa fa-pinterest"></a>
+                <a href="#" class="fa fa-twitter"></a>
+                <a href="#" class="fa fa-facebook"></a>
+        </div>
+
+
+        <div data-role="footer"> 
+
+            <div class="footer-nav">
+                    <hr>
+                <ul>
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">ABOUT US</a></li>
+                    <li><a href="#">CONTACT US</a></li>
+                </ul>
+            </div>
+
+            <div class="social-icons">
+                    <a href="#" class="fa fa-linkedin"></a>
+                    <a href="#" class="fa fa-pinterest"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-facebook"></a>
+            </div>
+            
+            <h2>&copy; copyrights and other details</h2>
+        </div>
+
+        <div data-role="panel" id="panel1" data-display="overlay">
+            <ul data-role="listview">
+                <li><a href=""> Profile</a> </li>
+                <li><a href=""> Home</a> </li>
+                <li><a href=""> Event Details</a> </li>
+                <li><a href=""> Locations</a> </li>
+                <li><a href="favourites.html"> Favourites</a> </li>
+                <li><a href="login.html"> Sign Out</a> </li>
+            </ul>
+        </div>
+    </div>
+    
+
+</body>
+</html>

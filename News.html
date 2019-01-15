@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login page</title>
+    <link rel="stylesheet" href="css/themes/theme1.css" />
+    <link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/themes/custom.css" />
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+
+</head>
+
+<body>
+
+    <!-- Event Details -->
+    <div data-role="page" id="news" data-theme="a">
+
+
+        <!--//////////Media query////////////-->
+<!--
+        @media screen and (min-width:768px) and (max-width: 1366px) {
+          
+     .event-location {
+    text-align: left !important;
+
+    .bigBen{
+text-align: left !important;
+
+
+    }
+        }-->
+
+        <!--/////////////////////////////////-->
+
+        <div data-role="header" data-position="fixed">
+            <h1>News</h1>
+            <a href="#panel1" data-icon="bars" data-iconpos="notext"> Menu </a>
+            <a href="" data-icon="back" data-iconpos="notext"> Back </a>
+           
+        </div>
+
+        <div class="ed-sec-1">
+            <section class='rating-widget single-star'> 
+                    <!-- Rating Stars Box -->
+                   
+                     <div class="">
+                	<h3>Latest events that are happening near you</h3>
+                	<div class="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d15844.672303997371!2d79.8667830592118!3d6.870454396966933!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2slk!4v1547290300359" width="100%" height="500" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+
+                </div>   
+                                                       
+                  </section>
+          
+
+        </div>
+        
+        <div class="bigBen" >
+             <div class='rating-stars text-right'>
+                      <ul id='stars'>
+                        <li class='star' title='Poor' data-value='1'>
+                          <i class='fa fa-star fa-fw'></i>
+                        </li>
+                      </ul>
+                    </div>
+            <h2>Big Ben Sugar Tae</h2>
+            <p>Flour and sugar and coffee and tae, I keep these handy but hard to see.</p>
+             <p>Special event-Solve the puzzle while having free coffee at Big Ben Coffee shop and win the QR code to get rewords. <a>More information...</a></p>
+        </div>
+
+         <div class="ed-sec-1 ">
+          
+            </div>
+
+         <div class="ed-sec-3">
+               <div class='rating-stars text-right'>
+                      <ul id='stars'>
+                        <li class='star' title='Poor' data-value='1'>
+                          <i class='fa fa-star fa-fw'></i>
+                        </li>
+                      </ul>
+                    </div>
+            <h2>London Bridge Carnival</h2>
+            <p>I'm not a selfie, but do show face. Find me alone but having fun with others.</p>
+            <p>Special event- find the revelent person in London Bridge Carnivalto get rewords. <a>More information...</a></p>
+        </div>
+<div class="ed-sec-1 ">
+          
+            </div>
+
+            <div data-role="footer" class="ui-footer"> 
+
+            <div class="footer-nav">
+                    <hr>
+                <ul>
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">ABOUT US</a></li>
+                    <li><a href="#">CONTACT US</a></li>
+                </ul>
+            </div>
+
+            <div class="social-icons">
+                    <a href="#" class="fa fa-linkedin"></a>
+                    <a href="#" class="fa fa-pinterest"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-facebook"></a>
+            </div>
+            
+            <h2>&copy; copyrights and other details</h2>
+        </div>
+
+        <div data-role="panel" id="panel1" data-display="overlay">
+            <ul data-role="listview">
+                <li><a href=""> Profile</a> </li>
+                <li><a href=""> Home</a> </li>
+                <li><a href=""> Event Details</a> </li>
+                <li><a href=""> Locations</a> </li>
+                <li><a href="favourites.html"> Favourites</a> </li>
+                <li><a href="login.html"> Sign Out</a> </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+  
+        /* 1. Visualizing things on Hover - See next part for action on click */
+        $('#stars li').on('mouseover', function(){
+            var onStar = parseInt($(this).data('value'), 10); // The star currently mouse on
+        
+            // Now highlight all the stars that's not after the current hovered star
+            $(this).parent().children('li.star').each(function(e){
+            if (e < onStar) {
+                $(this).addClass('hover');
+            }
+            else {
+                $(this).removeClass('hover');
+            }
+            });
+            
+        }).on('mouseout', function(){
+            $(this).parent().children('li.star').each(function(e){
+            $(this).removeClass('hover');
+            });
+        });
+        
+        
+        /* 2. Action to perform on click */
+        $('#stars li').on('click', function(){
+            var onStar = parseInt($(this).data('value'), 10); // The star currently selected
+            var stars = $(this).parent().children('li.star');
+            
+            for (i = 0; i < stars.length; i++) {
+            $(stars[i]).removeClass('selected');
+            }
+            
+            for (i = 0; i < onStar; i++) {
+            $(stars[i]).addClass('selected');
+            }
+            
+            // JUST RESPONSE (Not needed)
+            var ratingValue = parseInt($('#stars li.selected').last().data('value'), 10);
+            var msg = "";
+            if (ratingValue > 1) {
+                msg = "Thanks! You rated this " + ratingValue + " stars.";
+            }
+            else {
+                msg = "We will improve ourselves. You rated this " + ratingValue + " stars.";
+            }
+            responseMessage(msg);
+            
+        });
+        
+        
+        });
+
+
+        function responseMessage(msg) {
+        $('.success-box').fadeIn(200);  
+        $('.success-box div.text-message').html("<span>" + msg + "</span>");
+        }
+// Page Link 
+        $('.ed-sec-1').on('click', function () {
+            window.location = "Payments.html";
+        });
+
+    </script>
+
+</body>
+</html>
